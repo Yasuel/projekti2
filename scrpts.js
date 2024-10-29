@@ -19,7 +19,25 @@ function haeElokuva(){
             if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 //parsitaan dataa ja lisätään se sivulle
                 let leffatiedot = xmlhttp.responseText
+                //testioperaatio, poistetaan myöhemmin
                 console.log(leffatiedot)
+                //kerätään leffatiedoista kivat asiat ja laitetaan divin sisään taulukkoon
+                document.getElementById("leffataulukko").innerHTML = 
+                "<table>" +
+                "<tr>" +
+                    "<th>Title</th>" +
+                    "<th>Year</th>" +
+                    "<th>Plot</th>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td>" + leffatiedot.Title + "</td>" +
+                    "<td>" + leffatiedot.Year + "</td>" +
+                    "<td>" + leffatiedot.Plot + "</td>" +
+                
+
+
+                "</table>"
+
             }
     }
     
