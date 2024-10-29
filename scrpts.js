@@ -9,7 +9,7 @@ function haeElokuva(){
     }
 
     //tehdään haettava osoite
-    let hakuosoite = "http://www.omdbapi.com/?t=" + syöte
+    let hakuosoite = "https://www.omdbapi.com/?apikey=75309769&t=" + syöte
     // suoritetaan AJAX haku
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", hakuosoite, true);
@@ -18,7 +18,8 @@ function haeElokuva(){
     xmlhttp.onreadystatechange = function() {
             if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 //parsitaan dataa ja lisätään se sivulle
-                document.getElementById("leffadata").innerHTML=xmlhttp.responseText
+                let leffatiedot = xmlhttp.responseText
+                console.log(leffatiedot)
             }
     }
     
