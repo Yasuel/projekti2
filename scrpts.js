@@ -18,7 +18,7 @@ function haeElokuva(){
     xmlhttp.onreadystatechange = function() {
             if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 //parsitaan dataa ja lisätään se sivulle
-                var leffatiedot = xmlhttp.responseText
+                let leffatiedot = JSON.parse(xmlhttp.responseText)
                 //testioperaatio, poistetaan myöhemmin
                 console.log(leffatiedot)
                 //kerätään leffatiedoista kivat asiat ja laitetaan divin sisään taulukkoon
