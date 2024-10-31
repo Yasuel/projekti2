@@ -1,5 +1,6 @@
 //funktio joka hakee elokuvan tiedot ja tulostaa ne näytölle
 function haeElokuva(){
+    event.preventDefault()
     //haetaan tekstikentän syöte muuttujaan
     let x = document.getElementsByTagName('input');
     let syöte = x[0].value;
@@ -7,12 +8,8 @@ function haeElokuva(){
     if (syöte.length < 1) {
         throw new Error("Target can not be empty")
     }
-    localStorage.setItem("hakusana", syöte)
-}
-    
-//täytetään div sivun ladattua hakusanalla
-function täytäElokuvaData(){
-    let hakuosoite = "https://www.omdbapi.com/?apikey=75309769&t=" + localStorage.getItem("hakusana")
+
+    let hakuosoite = "https://www.omdbapi.com/?apikey=75309769&t=" + syöte
     // suoritetaan AJAX haku
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", hakuosoite, true);
