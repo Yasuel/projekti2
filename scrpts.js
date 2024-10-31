@@ -53,5 +53,5 @@ let x = document.getElementsByTagName('input');
 x[1].addEventListener("click", haeElokuva);
 
 //lisätään onload-kuuntelija
-let y = document.getElementById('leffataulukko');
-y[0].addEventListener("load",täytäElokuvaData);
+let y = document.body
+y.addEventListener("load",täytäElokuvaData);
