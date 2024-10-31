@@ -7,9 +7,12 @@ function haeElokuva(){
     if (syöte.length < 1) {
         throw new Error("Target can not be empty")
     }
-
-    //tehdään haettava osoite
-    let hakuosoite = "https://www.omdbapi.com/?apikey=75309769&t=" + syöte
+    localStorage.setItem("hakusana", syöte)
+}
+    
+//täytetään div sivun ladattua hakusanalla
+function täytäElokuvaData(){
+    let hakuosoite = "https://www.omdbapi.com/?apikey=75309769&t=" + localStorage.getItem("hakusana")
     // suoritetaan AJAX haku
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", hakuosoite, true);
@@ -48,3 +51,7 @@ function haeElokuva(){
 //lisätään kuuntelija hakukenttään
 let x = document.getElementsByTagName('input');
 x[1].addEventListener("click", haeElokuva);
+
+//lisätään onload-kuuntelija
+let y = document.getElementById('leffataulukko');
+y[1].addEventListener("onload",täytäElokuvaData);
