@@ -51,7 +51,3 @@ function täytäElokuvaData(){
 //lisätään kuuntelija hakukenttään
 let x = document.getElementsByTagName('input');
 x[1].addEventListener("click", haeElokuva);
-
-//lisätään onload-kuuntelija
-let y = document.body
-y.addEventListener("load",täytäElokuvaData);
